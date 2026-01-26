@@ -1,0 +1,15 @@
+import { createContext, useContext } from 'rect';
+
+const UserContext = createContext(undefined);
+
+export const useUser = () => {
+	const context = useContext(UserContext);
+
+	if (context === undefined) {
+		throw new Error('useUser must be used within a UserProvider');
+	}
+
+	return context;
+};
+
+export default UserContext;
