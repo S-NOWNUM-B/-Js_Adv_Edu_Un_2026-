@@ -27,14 +27,14 @@ export class Cart {
 		this.#items.push({ product, quantity });
 	}
 
-	getTotal() {
+	getSubtotal() {
 		return this.#items.reduce((total, item) => {
 			return total + (item.product.price * item.quantity);
 		}, 0);
 	}
 
 	getTax() {
-		return this.getTotal() * config.taxRate;
+		return this.getSubtotal() * config.taxRate;
 	}
 
 	getTotal() {
