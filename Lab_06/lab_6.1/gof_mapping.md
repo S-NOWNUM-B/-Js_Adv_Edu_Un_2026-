@@ -2,7 +2,7 @@
 
 1. SNIPPET_01 (Singleton): Object
 2. SNIPPET_02 (Observer): Object
-3. SNIPPET_03 (Faced): Object
+3. SNIPPET_03 (Facade): Object
 4. SNIPPET_04 (Factory Method): Class
 5. SNIPPET_05 (Decorator): Object
 6. SNIPPET_06 (Prototype): Object
