@@ -6,6 +6,6 @@ export class PushNotification {
 	send(message) {
 		console.log(`[PUSH] Device: ${this.deviceToken}, Title: ${this.title}`);
 		console.log(`[PUSH] Message: ${message}`);
-		return { success: true, message: 'Push notification sent successfully.' };
+		return { success: true, type: 'push' };
 	}
 }
