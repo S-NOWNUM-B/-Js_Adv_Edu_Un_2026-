@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Event Delegation — TodoList (1000 элементов)</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        h1 { color: #333; margin-bottom: 16px; }
+        #todoContainer { max-width: 700px; display: flex; flex-direction: column; gap: 6px; }
+        .todo-item {
+            display: flex; align-items: center; gap: 8px;
+            background: #fff; border-radius: 6px;
+            padding: 8px 12px; box-shadow: 0 1px 3px rgba(0,0,0,.1);
+        }
+        .todo-item.high { border-left: 4px solid #e74c3c; }
+        .todo-item.normal { border-left: 4px solid #3498db; }
+        .todo-text { flex: 1; }
+        .actions { display: flex; gap: 4px; }
+        .actions button {
+            padding: 3px 8px; border: none; border-radius: 4px;
+            cursor: pointer; font-size: 12px; background: #ecf0f1; color: #333;
+        }
+        .actions button[data-priority="high"] { background: #fadbd8; }
+        .actions button[data-action="delete"] { background: #e74c3c; color: #fff; }
+    </style>
+</head>
+<body>
+    <h1>Event Delegation Pattern — TodoList</h1>
+    <p>Открой <strong>DevTools → Elements → Event Listeners</strong> на <code>#todoContainer</code>:
+       всего <strong>2 слушателя</strong> (click и dblclick), несмотря на 1000 элементов.</p>
+    <div id="todoContainer"></div>
+
+    <script type="module">
+        import { TodoList } from "./todo/TodoList.js";
+
+        const list = new TodoList("todoContainer");
+        list.generateItems(1000);
+
+        console.log(
+            "=== Event Delegation: зарегистрировано слушателей на контейнере ===\n" +
+            "  click    — 1 (делегирует: delete, toggle, priority)\n" +
+            "  dblclick — 1 (делегирует: edit-start)\n" +
+            "  Итого на DOM-узлах: 2 (не 3000)"
+        );
+    </script>
+</body>
+</html>
