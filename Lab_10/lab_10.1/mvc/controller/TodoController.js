@@ -13,6 +13,6 @@ export class TodoController {
 
 		this.model.subscribe(this.view);
 
-		this.view.render(this.midel.getTodos());
+		this.view.render(this.model.getTodos());
 	}
 }
