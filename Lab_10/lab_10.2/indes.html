@@ -17,8 +17,8 @@
 <body>
     <div id="app"></div>
     <script type="module">
-        import { UserProfileViewModel } from './mvvm/viewmodel/UserProfileViewModel.js';
-        import { UserProfileForm } from './mvvm/view/UserProfileForm.js';
+        import { UserProfileViewModel } from './mvvm/view/UserProfileViewModel.js';
+        import { UserProfileForm } from './mvvm/viewmodel/UserProfileForm.js';
         
         const vm = new UserProfileViewModel();
         new UserProfileForm('app', vm);
